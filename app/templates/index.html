@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> This is an index page </h1>
+    {% if user.is_authenticated %}
+        <p> Only authenticated users can see this sentence. </p>
+    {% else %}
+        <p> Everyone can see this sentence. </p>
+    {% endif %}
+    <a href="{% url 'secret_page' %}"> Secret Page </a>
+{% endblock %}
